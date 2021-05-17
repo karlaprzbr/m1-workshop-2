@@ -1,0 +1,55 @@
+{% extends 'base.twig' %}
+
+{% block title 'Accueil' %}
+
+{% block content %}
+
+    <table class="table">
+        <thead>
+            <th></th>
+            {% for data in metas["record"] %}
+                <th>{{data["label"]}}</th>
+            {% endfor %}
+            <th></th>
+            {% for data in metas["production"] %}
+                <th>{{data["label"]}}</th>
+            {% endfor %}
+            {% for data in metas["speaker"] %}
+                <th>{{data["label"]}}</th>
+            {% endfor %}
+            <th></th>
+        </thead>
+        <tbody>
+            {% for data in results %}
+            <tr id="record{{ data["record_id"] }}">
+                {% include 'one_record.twig' with {'data': data, 'metas':metas} %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+    {# <div class="rTable">
+        <div class="rTableHeading">
+            <div class="rTableHead">&nbsp;</div>
+            {% for data in metas["record"] %}
+                <div class="rTableHead"><span class="header">{{data["label"]}}</span></div>
+            {% endfor %}
+            <div class="rTableHead">&nbsp;</div>
+            {% for data in metas["production"] %}
+                <div class="rTableHead"><span class="header">{{data["label"]}}</span></div>
+            {% endfor %}
+            {% for data in metas["speaker"] %}
+                <div class="rTableHead"><span class="header">{{data["label"]}}</span></div>
+            {% endfor %}
+                <div class="rTableHead">&nbsp;</div>
+        </div>
+        {% for data in results %}
+        <div class="rTableRow {% if loop.index % 2 == 0%}even{% else %}odd{% endif %}" id="record{{ data["record_id"] }}">
+                    {% include 'one_record.twig' with {'data': data, 'metas':metas} %}
+        </div>
+        {% endfor %}
+    </div> #}
+
+{% endblock %}
