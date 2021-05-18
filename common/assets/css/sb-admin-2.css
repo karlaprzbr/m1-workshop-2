@@ -11321,6 +11321,31 @@ body.sidebar-toggled footer.sticky-footer {
   overflow-x: auto;
 }
 
+/* GRID TEMPLATE */
+/* body {
+  display: grid;
+  grid-template-rows: 50px auto 100px;
+  grid-template-columns: 30% auto;
+}
+
+nav {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  background-color: var(--flashy-green);
+}
+
+main {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  background-color: var(--cream);
+}
+
+footer {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  background-color: var(--dark-green);
+} */
+
 
 
 
