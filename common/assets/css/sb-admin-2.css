@@ -10515,7 +10515,7 @@ a:focus {
 
 @media (min-width: 768px) {
   .sidebar {
-    width: 14rem !important;
+    width: 20rem !important;
   }
   .sidebar .nav-item .collapse {
     position: relative;
@@ -11309,8 +11309,16 @@ body.sidebar-toggled footer.sticky-footer {
   color: var(--cream);
 }
 
+.text-flashy-green {
+  color: var(--flashy-green);
+}
+
 #monkey {
   fill: var(--white);
+}
+
+.scrollme {
+  overflow-x: auto;
 }
 
 

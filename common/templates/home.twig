@@ -5,9 +5,9 @@
 {% block content %}
 
     <div class="bg-white rounded shadow">
-    <table class="table">
+    <table class="table table-responsive">
         <thead>
-            <th></th>
+            {# <th></th> #}
             {% for data in metas["record"] %}
                 <th>{{data["label"]}}</th>
             {% endfor %}
