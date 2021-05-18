@@ -11309,16 +11309,22 @@ body.sidebar-toggled footer.sticky-footer {
   color: var(--cream);
 }
 
+.btn-flashy-green {
+  background-color: var(--flashy-green);
+  color: white;
+}
+
+.btn-flashy-green:hover {
+  background-color: var(--dark-green);
+  color: white;
+}
+
 .text-flashy-green {
   color: var(--flashy-green);
 }
 
 #monkey {
   fill: var(--white);
-}
-
-.scrollme {
-  overflow-x: auto;
 }
 
 /* GRID TEMPLATE */
