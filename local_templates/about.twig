@@ -1,5 +1,8 @@
-{% include 'header.twig' with {'submenu': "<ul><li><a href='about.php?pid=1'><span>MURIQUIS’ VOCAL COMMUNICATION</span></a></li><li><a href='about.php?pid=2'><span>DESCRIPTION OF DATA AND TABLE</span></a></li></ul>"} %}
+{% extends 'base.twig' %}
 
+{# {% include 'header.twig' with {'submenu': "<ul><li><a href='about.php?pid=1'><span>MURIQUIS’ VOCAL COMMUNICATION</span></a></li><li><a href='about.php?pid=2'><span>DESCRIPTION OF DATA AND TABLE</span></a></li></ul>"} %} #}
+
+{% block content %}
 {% if pid == 1 %}
 <p><img src="img/Nancy.jpg" style="float:left;margin:15px;"/></p>
 <h1>MURIQUIS</h1>
@@ -82,5 +85,6 @@
 </UL>
 </p>
 {% endif %}
+{% endblock %}
 
-{% include 'footer.twig' %}
+{# {% include 'footer.twig' %} #}

@@ -4,7 +4,20 @@
 
 {% block content %}
 
-    <table class="table">
+    <!-- Sidebar -->
+    <div class="col-2 bg-cream sidebar-light accordion" id="accordionSidebar">
+
+        {# TRYING TO ADD THE FILTERS #}
+        <div>
+            {% include 'filter_table.twig' %}
+        </div>
+
+    </div>
+    <!-- End of Sidebar -->
+    
+    <div class="col-10 bg-cream">
+    <div class="bg-white rounded shadow">
+    <table class="table table-responsive">
         <thead>
             <th></th>
             {% for data in metas["record"] %}
@@ -27,6 +40,8 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
+    </div>
 
 
 
