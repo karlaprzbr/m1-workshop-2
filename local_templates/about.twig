@@ -1,16 +1,17 @@
 {% include 'header.twig' with {'submenu': "<ul><li><a href='about.php?pid=1'><span>MURIQUIS’ VOCAL COMMUNICATION</span></a></li><li><a href='about.php?pid=2'><span>DESCRIPTION OF DATA AND TABLE</span></a></li></ul>"} %}
-
-{% if pid == 1 %}
 <style type="text/css">
-    @media screen and (min-width: 800px){
+    @media screen and (max-width: 800px){
         img{
-            float: none;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
+            float: none !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            display: block !important;
         }
     }  
 </style>
+
+{% if pid == 1 %}
+
 <div align="justify">
     <div style="
         ;margin: 10px auto 10px;
