@@ -1,12 +1,13 @@
-<div>
-	<span class="label">{{ meta.label }}</span>
-	from&nbsp;<input size="5" autocomplete="off" data-rule-number="true" type="text" name="value[{{meta.id}}][0]" value="{{value[0]}}" id="{{meta.id}}_0"/>
-	<img class="action_icon" onclick="javascript:clear_elt('{{meta.id}}_0');" src="img/inactive.png"/> 
-	to&nbsp;<input size="5" autocomplete="off" type="text" name="value[{{meta.id}}][1]" data-rule-number="true" value="{{value[1]}}" id="{{meta.id}}_1"/>
+{# <div>
+	<span class="label">{{ meta.label }}</span>from&nbsp;
+	<input size="5" autocomplete="off" data-rule-number="true" type="text" name="value[{{meta.id}}][0]" value="{{value[0]}}" id="{{meta.id}}_0"/>
+	<img class="action_icon" onclick="javascript:clear_elt('{{meta.id}}_0');" src="img/inactive.png"/> to&nbsp;
+	<input size="5" autocomplete="off" type="text" name="value[{{meta.id}}][1]" data-rule-number="true" value="{{value[1]}}" id="{{meta.id}}_1"/>
 	<img class="action_icon" onclick="javascript:clear_elt('{{meta.id}}_1');" src="img/inactive.png"/> 
 </div>
 <div class="slider" id="slider-{{meta.id}}"></div> 
 <br clear="both">
+
 <script type="text/javascript">
 $(function() {
 		$( "#slider-{{meta.id}}" ).slider({
@@ -23,4 +24,9 @@ $(function() {
 		   }
 		});
 	 });
-</script>
+</script> #}
+
+<label for="{{meta.id}}_0">{{ meta.label }} from</label>
+<input autocomplete="off" data-rule-number="true" id="{{meta.id}}_0" type="number" name="value[{{meta.id}}][0]" value="{{value[0]}}" class="form-control">
+<label for="{{meta.id}}_0">{{ meta.label }} to</label>
+<input autocomplete="off" data-rule-number="true" id="{{meta.id}}_1" type="number" name="value[{{meta.id}}][1]" value="{{value[1]}}" class="form-control">
