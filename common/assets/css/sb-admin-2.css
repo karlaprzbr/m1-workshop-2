@@ -11397,3 +11397,12 @@ body.sidebar-toggled footer.sticky-footer {
 
 
 
+/* OUAIS OUAIS C'EST MOI */
+.separator_nav{
+  height: 30px;
+  width: 1px;
+  background: white;
+  display: inline-block;
+  margin: auto 10px;
+  border-radius: 10px;
+}

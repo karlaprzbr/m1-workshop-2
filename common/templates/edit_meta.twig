@@ -9,25 +9,19 @@
 				</div>
 				<div class="modal-body">
 
-
-
-					<div class="rTable">
-						<div class="rTableRow">
+					<div class="">
 							<div class="rTableHeadCell"></div>
 							<div class="rTableCell">{% if meta["id"] %}#{{meta["id"]}}{% endif %}</div>
-						</div>
 					</div>
-					<div class="rTable">
-						<div class="rTableRow">
+					<div class="">
 							<div class="rTableHeadCell">Pour la table</div>
 							<div class="rTableCell">{{meta["table_name"]}}</div>
-						</div>
 					</div>
-					<div class="rTable">
+					<div class="">
 							<label for="field_name" class="form-label">Nom du champ</label>
 							<input type="text" id="field_name" class="form-control" aria-describedby="field_name" value='{{meta["field_name"]}}'>
 					</div>
-					<div class="rTable">
+					<div class="">
 					
 						{% if meta["id"] == -1 %}
 						<label for="field_type" class="form-label">Type du champ</label>
@@ -41,27 +35,17 @@
 						{% endif %}
 					
 					</div>
-					<div class="rTable">
+					<div class="">
 						<label for="field_label" class="form-label">Intitulé du champs (pour la recherche)</label>
 						<input type="text" name='label' id="field_label" class="form-control" aria-describedby="field_label" value='{{meta["label"]}}'>
-
 					</div>
-					<div class="rTable">
+					<div class="">
 						<label for="field_actif" class="form-label">Champ actif ?</label>
-						<select name="active" id="field_actif">
+						<select name="active" id="field_actif" class="form-select">
 							<option value="1" {% if '1' == meta["active"] %} selected{% endif %}>Oui</option>
 							<option value="0" {% if '0' == meta["active"] %} selected{% endif %}>Non</option>
 						</select>
-						
 					</div>
-					<div class="rTableRow">
-						<div class="rTableCell">
-							<!-- <input type="submit" class="btn btn-primary" value="Save changes" /> -->
-						</div>
-					</div>
-
-
-
 
 				</div>
 				<div class="modal-footer">
