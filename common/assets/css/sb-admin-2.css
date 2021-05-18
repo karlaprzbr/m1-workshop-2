@@ -11309,6 +11309,10 @@ body.sidebar-toggled footer.sticky-footer {
   color: var(--cream);
 }
 
+#monkey {
+  fill: var(--white);
+}
+
 
 
 
