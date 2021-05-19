@@ -7,41 +7,40 @@
 					<h5 class="modal-title" id="exampleModalLabel">Edition d'un champ optionel</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
-				<div class="modal-body">
-
+				<div class="modal-body bg-white">
 					<div class="">
 							<div class="rTableHeadCell"></div>
 							<div class="rTableCell">{% if meta["id"] %}#{{meta["id"]}}{% endif %}</div>
 					</div>
+					{% if meta["table_name"] is not null %}
 					<div class="">
 							<div class="rTableHeadCell">Pour la table</div>
 							<div class="rTableCell">{{meta["table_name"]}}</div>
 					</div>
-					<div class="">
+					{% endif %}
+					<div class="form-group">
 							<label for="field_name" class="form-label">Nom du champ</label>
 							<input type="text" id="field_name" class="form-control" aria-describedby="field_name" value='{{meta["field_name"]}}'>
 					</div>
-					<div class="">
-					
+					<div class="form-group">
 						{% if meta["id"] == -1 %}
 						<label for="field_type" class="form-label">Type du champ</label>
-						<select name="type" id="field_type">
+						<select name="type" id="field_type" class="form-control">
 							{% for t in types %}
 							<option value="{{t}}" {% if t == meta["type"] %} selected{% endif %}>{{t}}</option>
 							{% endfor %}
 						</select>
 						{% else %}
-						{{meta["type"]}}
+							{{meta["type"]}}
 						{% endif %}
-					
 					</div>
-					<div class="">
+					<div class="form-group">
 						<label for="field_label" class="form-label">Intitulé du champs (pour la recherche)</label>
 						<input type="text" name='label' id="field_label" class="form-control" aria-describedby="field_label" value='{{meta["label"]}}'>
 					</div>
-					<div class="">
+					<div class="form-group">
 						<label for="field_actif" class="form-label">Champ actif ?</label>
-						<select name="active" id="field_actif" class="form-select">
+						<select name="active" id="field_actif" class="form-control">
 							<option value="1" {% if '1' == meta["active"] %} selected{% endif %}>Oui</option>
 							<option value="0" {% if '0' == meta["active"] %} selected{% endif %}>Non</option>
 						</select>
@@ -50,7 +49,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<input type="submit" class="btn btn-primary" value="Save changes" />
+					<input type="submit" class="btn btn-flashy-green" value="Save changes" />
 				</div>
 			</div>
 		</div>
