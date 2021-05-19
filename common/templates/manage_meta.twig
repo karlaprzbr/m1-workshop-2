@@ -26,7 +26,9 @@
 				<tr>{% include 'one_meta.twig' with {'data': data} %}</tr>
 				{% endfor %}
 				<tr>
-					<td colspan=5 class="text-right"><a href="edit_meta.php?metaid=-1&table={{table}}" class="btn btn-flashy-green">Ajouter un nouveau champ optionel</a></td>
+					<td colspan=5 class="text-right">
+						<a class="btn btn-flashy-green" data-bs-toggle="modal" data-bs-target="#editModal" href='edit_meta.php?metaid=-1&table={{table}}'>Ajouter un nouveau champ optionel</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
