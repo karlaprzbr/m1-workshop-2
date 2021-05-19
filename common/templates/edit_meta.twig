@@ -12,28 +12,29 @@
 							<div class="rTableHeadCell"></div>
 							<div class="rTableCell">{% if meta["id"] %}#{{meta["id"]}}{% endif %}</div>
 					</div>
+					{% if meta["table_name"] is not null %}
 					<div class="">
 							<div class="rTableHeadCell">Pour la table</div>
 							<div class="rTableCell">{{meta["table_name"]}}</div>
 					</div>
-					<div class="">
+					{% endif %}
+					<div class="form-group">
 							<label for="field_name" class="form-label">Nom du champ</label>
 							<input type="text" id="field_name" class="form-control" aria-describedby="field_name" value='{{meta["field_name"]}}'>
 					</div>
-					<div class="">
-					
+					<div class="form-group">
 						{% if meta["id"] == -1 %}
 						<label for="field_type" class="form-label">Type du champ</label>
-						<select name="type" id="field_type">
+						<select name="type" id="field_type" class="form-control">
 							{% for t in types %}
 							<option value="{{t}}" {% if t == meta["type"] %} selected{% endif %}>{{t}}</option>
 							{% endfor %}
 						</select>
 						{% else %}
-						{{meta["type"]}}
+							{{meta["type"]}}
 						{% endif %}
 					</div>
-					<div class="">
+					<div class="form-group">
 						<label for="field_label" class="form-label">Intitulé du champs (pour la recherche)</label>
 						<input type="text" name='label' id="field_label" class="form-control" aria-describedby="field_label" value='{{meta["label"]}}'>
 					</div>
