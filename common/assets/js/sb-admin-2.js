@@ -54,3 +54,11 @@
   });
 
 })(jQuery); // End of use strict
+
+
+
+// trying to fix dropdown issue
+var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+  return new bootstrap.Dropdown(dropdownToggleEl)
+})
