@@ -18,8 +18,7 @@
     <div class="col-10 bg-cream">
     <div class="bg-white rounded shadow">
     <table class="table table-responsive">
-        <thead>
-            <th></th>
+        <thead>           
             {% for data in metas["record"] %}
                 <th>{{data["label"]}}</th>
             {% endfor %}
@@ -27,9 +26,11 @@
             {% for data in metas["production"] %}
                 <th>{{data["label"]}}</th>
             {% endfor %}
+            <th></th>
             {% for data in metas["speaker"] %}
                 <th>{{data["label"]}}</th>
             {% endfor %}
+            <th></th>
             <th></th>
         </thead>
         <tbody>

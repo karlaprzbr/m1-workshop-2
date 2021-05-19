@@ -11437,3 +11437,25 @@ footer {
   margin: auto 10px;
   border-radius: 10px;
 }
+
+.button_basket {
+  cursor:pointer;
+  vertical-align:middle!important;
+  transition: .2 ease
+}
+
+.button_basket:hover{
+  transform:scale(1.1)
+}
+
+.button_basket_svg{
+  background: #E6E6E6;
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+td{
+  vertical-align:middle!important;
+}
