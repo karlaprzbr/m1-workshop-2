@@ -16,6 +16,7 @@
   --flashy-green: #28b67e !important;
   --blueish-gray: #d3dcde;
   --cream: #ece9e9;
+  
   --blue: #4e73df;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -11287,6 +11288,10 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 /* CUSTOM STYLE */
+[class^="bg"]{
+  transition: background ease-out .3s;
+}
+
 .bg-cream {
   background-color: var(--cream);
 }
@@ -11326,6 +11331,8 @@ body.sidebar-toggled footer.sticky-footer {
 #monkey {
   fill: var(--white);
 }
+
+
 
 /* GRID TEMPLATE */
 /* body {
@@ -11474,7 +11481,7 @@ footer {
 .button_basket {
   cursor:pointer;
   vertical-align:middle!important;
-  transition: .2 ease
+  transition: .2s ease all;
 }
 
 .button_basket:hover{
@@ -11492,3 +11499,27 @@ footer {
 td{
   vertical-align:middle!important;
 }
+
+
+/* A modifier */
+
+[data-theme="dark"] .bg-cream{
+  background-color: #212121 !important;
+  
+}
+
+[data-theme="dark"] .bg-white{
+  background-color: #2E2E2E !important;
+
+}
+
+[data-theme="dark"]{
+  color: #DDD !important;
+
+}
+
+[data-theme="dark"] form > input{
+  background: #383838 !important;
+}
+
+
