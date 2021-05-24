@@ -2,7 +2,7 @@
 $ajax = false;
 $need_auth = false;
 $want_menu = true;
-require_once("./common/init.php");
+require_once("../common/env/init.php");
 
 if(!isset($_SESSION["basket"])){
 	$_SESSION["basket"] = [];

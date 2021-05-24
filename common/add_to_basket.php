@@ -2,7 +2,7 @@
 $ajax = true;
 $need_auth = false;
 $want_menu = false;
-require_once("./common/init.php");
+require_once("../common/env/init.php");
 
 $record_id = (isset($_POST["rid"])?intval($_POST["rid"]):Null);
 $act = (isset($_POST["act"])?$_POST["act"]:Null);

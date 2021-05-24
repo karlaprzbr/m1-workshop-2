@@ -4,15 +4,19 @@
 <div class="container">
 	<h1>Gestion de la base - table {{table}}</h1>
 	
-	Champs obligatoires
-	<ul>
-		{% for data in required %}
-			<li>{{ data }}</li>
-		{% endfor %}
-	</ul>
-	
-	Champs optionels
-	<div class="bg-white rounded shadow">
+	{# {{ dump(required) }} #}
+	{% if required is not empty%}
+
+		<h2>Champs obligatoires</h2>
+		<ul>
+			{% for data in required %}
+				<li>{{ data }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	<h2>Champs optionels</h2>
+	<div class="bg-white rounded shadow table-responsive">
 		<table class="table">
 			<thead>
 				<th></th>
@@ -27,7 +31,7 @@
 				{% endfor %}
 				<tr>
 					<td colspan=5 class="text-right">
-						<a class="btn btn-flashy-green" data-bs-toggle="modal" data-bs-target="#editModal" href='edit_meta.php?metaid=-1&table={{table}}'>Ajouter un nouveau champ optionel</a>
+						<a class="btn btn-custom-secondary" href='edit_meta.php?metaid=-1&table={{table}}'>Ajouter un nouveau champ optionel</a>
 					</td>
 				</tr>
 			</tbody>

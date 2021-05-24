@@ -2,7 +2,7 @@
 $ajax = false;
 $need_auth = false;
 $want_menu = true;
-require_once("./common/init.php");
+require_once("../common/env/init.php");
 
 function str_to_sqldate($str){
 	$tmp = explode("/",$str);
@@ -48,8 +48,8 @@ foreach($values as $meta_id=>$vals){
 	$max = -1;
 	if (is_array($vals)){
 		if($type == "date"){
-			if( $vals[0]!= ''){ $min = $vals[0];}
-			if( $vals[1]!= ''){ $max = $vals[1];}
+			if( $vals[0]!= ''){ $min = str_to_sqldate($vals[0]);}
+			if( $vals[1]!= ''){ $max = str_to_sqldate($vals[1]);}
 		}
 		if($type == "int"){
 			if( $vals[0]!= ''){ $min = intval($vals[0]);}

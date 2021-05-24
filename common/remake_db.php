@@ -2,7 +2,7 @@
 $ajax = false;
 $need_auth = true;
 $want_menu = true;
-require_once("./common/init.php");
+require_once("../common/env/init.php");
 
 
 function flat_table($dbh, $table_name){

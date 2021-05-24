@@ -1,0 +1,212 @@
+/* COMMON STYLE ALL SITES */
+
+:root {
+    --black: #0d1321;
+    --background: #ece9e9;
+    --background-dark: #212121;
+    --block-dark:#2E2E2E;
+    --text-color: #858796;
+    --text-color-dark: #DFDFDF;
+    --border-color-dark: #444;
+    --font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    /* transition: background .2s ease-out; */
+}
+
+a,.nav-link{
+    color:var(--custom-secondary);
+}
+
+a:hover,.nav-link:hover{
+    color:var(--text-color);
+}
+
+h1 {
+    color: var(--custom-primary);
+    margin-top: 10px;
+}
+
+h2 {
+    color: var(--custom-secondary)
+}
+
+.table {
+    color: var(--text-color);
+    overflow-x: scroll;
+}
+
+.bg-custom-primary {
+    background-color: var(--custom-primary);
+    color: white;
+}
+
+.bg-custom-secondary {
+    background-color: var(--custom-secondary);
+    color: white;
+}
+
+.btn-custom-primary {
+    background-color: var(--custom-primary);
+    color: white;
+}
+
+.btn-custom-primary:hover {
+    background-color: var(--custom-secondary);
+    color: white;
+}
+
+.btn-custom-secondary {
+    background-color: var(--custom-secondary);
+    color: white;
+}
+
+.btn-custom-secondary:hover {
+    background-color: var(--custom-primary);
+    color: white;
+}
+
+.text-custom-primary {
+    color: var(--custom-primary);
+}
+
+.text-custom-secondary {
+    color: var(--custom-secondary);
+}
+
+.card-header{
+    background:var(--custom-primary);
+}
+
+.card-login{
+    max-height:400px;
+    max-width:400px;
+    height:100%;
+    width:100%
+}
+
+.card-login form{
+    height: 100%;
+    display: grid;
+    align-content: space-around;
+}
+
+
+/* Dark theme */
+
+.nav-switch-dark-mode{
+    display: grid;
+    place-content: center;
+    margin: 0 25px;
+    color:white;
+}
+
+
+[data-theme="dark"]{
+    background-color: var(--background-dark);
+    color:var(--text-color-dark);
+}
+
+[data-theme="dark"] nav{
+    background:var(--custom-primary);
+}
+
+[data-theme="dark"] h1{
+    color:var(--custom-secondary);
+}
+
+[data-theme="dark"] h2{
+    color:var(--text-color-dark);
+}
+
+[data-theme="dark"] .table{
+    color:var(--text-color-dark);
+}
+
+[data-theme="dark"] .bg-white,[data-theme="dark"] .card-body{
+    background-color: var(--block-dark)!important;
+    
+}
+
+[data-theme="dark"] .nav-link.active{
+    background-color: var(--block-dark)!important;
+    border-color: var(--block-dark);
+    color:var(--text-color-dark);
+}
+
+[data-theme="dark"] .card{
+    border-color: var(--border-color-dark);
+}
+
+[data-theme="dark"] form input:not([type="submit"]){
+    background: #383838;
+    border-color: var(--border-color-dark) ;
+    color:var(--text-color-dark);
+  }
+
+[data-theme="dark"] .table>:not(caption)>*>*{
+    border-bottom-color: var(--border-color-dark) ;
+}
+
+[data-theme="dark"] .card-header{
+    background:var(--custom-primary);
+}
+  
+
+
+
+.btn-svg {
+    background-color: var(--custom-secondary);
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+    color: white;
+    cursor:pointer;
+}
+
+.btn-svg:hover {
+    background-color: var(--custom-primary);
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+    color: white;
+}
+
+/* Scroll to the top */
+
+.scroll-to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    text-align: center;
+    color: #fff;
+    background: #1cc88a;;
+    line-height: 46px;
+}
+
+.scroll-to-top:focus, .scroll-to-top:hover {
+    color: white;
+}
+
+.scroll-to-top:hover {
+    background: #1d4c4f;
+}
+
+.scroll-to-top svg {
+    font-weight: 800;
+}

@@ -2,7 +2,7 @@
 $ajax = false;
 $need_auth = false;
 $want_menu = true;
-require_once("./common/init.php");
+require_once("../common/env/init.php");
 
 $pid = (isset($_GET["pid"])?intval($_GET["pid"]):1);
 

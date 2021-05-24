@@ -1,57 +1,78 @@
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-	<form id="edit_form" method="post">
-		<input type="hidden" name="act" value="save">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Edition d'un champ optionel</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body bg-white">
-					<div class="">
-							<div class="rTableHeadCell"></div>
-							<div class="rTableCell">{% if meta["id"] %}#{{meta["id"]}}{% endif %}</div>
-					</div>
-					{% if meta["table_name"] is not null %}
-					<div class="">
-							<div class="rTableHeadCell">Pour la table</div>
-							<div class="rTableCell">{{meta["table_name"]}}</div>
-					</div>
-					{% endif %}
-					<div class="form-group">
-							<label for="field_name" class="form-label">Nom du champ</label>
-							<input type="text" id="field_name" class="form-control" aria-describedby="field_name" value='{{meta["field_name"]}}'>
-					</div>
-					<div class="form-group">
-						{% if meta["id"] == -1 %}
-						<label for="field_type" class="form-label">Type du champ</label>
-						<select name="type" id="field_type" class="form-control">
-							{% for t in types %}
-							<option value="{{t}}" {% if t == meta["type"] %} selected{% endif %}>{{t}}</option>
-							{% endfor %}
-						</select>
-						{% else %}
-							{{meta["type"]}}
-						{% endif %}
-					</div>
-					<div class="form-group">
-						<label for="field_label" class="form-label">Intitulé du champs (pour la recherche)</label>
-						<input type="text" name='label' id="field_label" class="form-control" aria-describedby="field_label" value='{{meta["label"]}}'>
-					</div>
-					<div class="form-group">
-						<label for="field_actif" class="form-label">Champ actif ?</label>
-						<select name="active" id="field_actif" class="form-control">
-							<option value="1" {% if '1' == meta["active"] %} selected{% endif %}>Oui</option>
-							<option value="0" {% if '0' == meta["active"] %} selected{% endif %}>Non</option>
-						</select>
-					</div>
+{% extends 'base.twig' %}
 
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<input type="submit" class="btn btn-flashy-green" value="Save changes" />
+{% block title 'Basket' %}
+
+{% block content %}
+<div class="container d-grid m-auto">
+	<div class="bg-white rounded shadow p-5">
+		<h1 class="text-custom-secondary text-center">Edition d'un champ optionel</h1>
+		<form id="edit_form" method="post">
+			<input type="hidden" name="act" value="save">
+			<div class="row mb-3">
+				<div class="col"></div>
+				<div class="col">
+					{% if meta["id"] %}#{{meta["id"]}}{% endif %}
 				</div>
 			</div>
-		</div>
-	</form>
+			<div class="row mb-3">
+				<div class="col">
+					<label>Pour la table</label>
+				</div>
+				<div class="col">
+					{{meta["table_name"]}}
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+					<label>Nom du champ</label>
+				</div>
+				<div class="col">
+					<input name='field_name' value='{{meta["field_name"]}}' class="form-control"/>
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+					<label>Type du champ</label>
+				</div>
+				<div class="col">
+					{% if meta["id"] == -1 %}
+					<select name="type" class="form-select">
+						{% for t in types %}
+							<option value="{{t}}"{% if t == meta["type"] %} selected{% endif %}>{{t}}</option>
+						{% endfor %}
+					</select>
+					{% else %}
+						{{meta["type"]}}
+					{% endif %}
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+					<label>Intitulé du champ (pour la recherche)</label>
+				</div>
+				<div class="col">
+					<input name='label' value='{{meta["label"]}}' class="form-control"/>
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+					<label>Champ actif ?</label>
+				</div>
+				<div class="col">
+					<select name="active" class="form-select">
+						<option value="1" {% if '1' == meta["active"] %} selected{% endif %}>Oui</option>
+						<option value="0" {% if '0' == meta["active"] %} selected{% endif %}>Non</option>
+					</select>
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col">
+				</div>
+				<div class="col text-right">
+					<input type="submit" class="btn btn-custom-primary w-100"/>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
+{% endblock %}

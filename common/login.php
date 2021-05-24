@@ -1,7 +1,7 @@
 <?php
 $need_auth = false;
 $want_menu = false;
-require_once("./common/init.php");
+require_once("../common/env/init.php");
 
 $act = (isset($_POST["act"])?$_POST["act"]:Null);
 $logout = (isset($_GET["logout"])?intval($_GET["logout"]):-1);
